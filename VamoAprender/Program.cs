@@ -36,7 +36,7 @@ namespace VamoAprender
                 case 1:
                     if (verdade == true)
                     {
-                        Console.Write("Dia que acaba o BBB: ");
+                        Console.Write("Dia depois de 100 dias: ");
                         Console.WriteLine(data);
                         Console.WriteLine(Class1.classe); // Aprendendo sobre objetos e classes.
                         Console.ReadLine();
