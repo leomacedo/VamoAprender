@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-//using System.IO; Modulo de arquivos
+using System.IO;
 
 
 namespace VamoAprender
@@ -28,9 +28,8 @@ namespace VamoAprender
             DateTime data = new DateTime(2010, 1, 25); // Datas em c#
             data = data.AddDays(100);
 
-            bool verdade = true;
-            int numerocaseswitch = 1;
-
+            dynamic numerocaseswitch = 2;
+            bool verdade = true; 
             switch (numerocaseswitch) // testando cases em c#
             {
                 case 1:
@@ -57,6 +56,24 @@ namespace VamoAprender
                         Console.WriteLine(divisao);
                         Console.ReadLine();
                     }
+                    break;
+                case 2:
+                    Console.WriteLine("Digite um texto");
+                    string texto = Console.ReadLine();
+
+                    StreamWriter arquivo = new StreamWriter("nomes.Txt");
+                    arquivo.WriteLine(texto);
+                    arquivo.Close();
+                    Console.WriteLine("Arquivo Gerado");
+                    Console.ReadKey();
+
+                    StreamReader leitor = new StreamReader("nomes.txt", Encoding.Default); // Enconding é bom para ler palavras com acento
+                    string lido = leitor.ReadToEnd();
+
+                    Console.WriteLine(lido);
+                    Console.ReadKey();
+
+                  
                     break;
             }
 
