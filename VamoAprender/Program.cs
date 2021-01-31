@@ -28,11 +28,11 @@ namespace VamoAprender
             DateTime data = new DateTime(2010, 1, 25); // Datas em c#
             data = data.AddDays(100);
 
-            dynamic numerocaseswitch = 2;
+            dynamic numerocaseswitch = 3;
             bool verdade = true; 
             switch (numerocaseswitch) // testando cases em c#
             {
-                case 1:
+                case 1: // Brincando com a logica
                     if (verdade == true)
                     {
                         Console.Write("Dia depois de 100 dias: ");
@@ -57,23 +57,27 @@ namespace VamoAprender
                         Console.ReadLine();
                     }
                     break;
-                case 2:
-                    Console.WriteLine("Digite um texto");
-                    string texto = Console.ReadLine();
-
+                case 2: // Escrevendo arquivos
                     StreamWriter arquivo = new StreamWriter("nomes.Txt");
-                    arquivo.WriteLine(texto);
+                    int i = 0;
+                    while (i < 5)
+                    {
+                        Console.WriteLine("Digite um nome");
+                        string nome = Console.ReadLine();
+                        arquivo.WriteLine(nome);
+                        i++;
+                    }
                     arquivo.Close();
                     Console.WriteLine("Arquivo Gerado");
-                    Console.ReadKey();
-
+                    Console.ReadLine();
+                    break;
+                case 3: // Lendo arquivos e armazeando em arrays
                     StreamReader leitor = new StreamReader("nomes.txt", Encoding.Default); // Enconding é bom para ler palavras com acento
-                    string lido = leitor.ReadToEnd();
+                    string[] lido = leitor.ReadToEnd().Split('\n');
 
-                    Console.WriteLine(lido);
-                    Console.ReadKey();
-
-                  
+                    Console.WriteLine(lido[0]);
+                    Console.WriteLine("Arquivo Lido");
+                    Console.ReadLine();           
                     break;
             }
 
