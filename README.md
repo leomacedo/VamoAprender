@@ -1,2 +1,2 @@
 # VamoAprender
-Só pra aprender C#
+Alguns comandos só.
