@@ -33,6 +33,7 @@ namespace VamoAprender
             switch (numerocaseswitch) // testando cases em c#
             {
                 case 1: // Brincando com a logica
+                    // Operadores logicos && <- And e || <- Or
                     if (verdade == true)
                     {
                         Console.Write("Dia depois de 100 dias: ");
@@ -75,12 +76,31 @@ namespace VamoAprender
                     StreamReader leitor = new StreamReader("nomes.txt", Encoding.Default); // Enconding é bom para ler palavras com acento
                     string[] lido = leitor.ReadToEnd().Split('\n');
 
-                    Console.WriteLine(lido[0]);
-                    Console.WriteLine("Arquivo Lido");
+                    foreach (string nome in lido)
+                    {
+                        Console.WriteLine(nome);
+                    }
+                    Mensagem("Arquivo Lido");
                     Console.ReadLine();           
                     break;
+                case 4: // Testando Funções
+                    Mensagem("olá");
+                    Mensagem("Tudo bom?");
+                    int result = Somar(4, 5);
+                    Mensagem(result);
+                    Console.ReadLine();
+                    break;
             }
-
+            
+        }
+        static void Mensagem(dynamic msg)
+        {
+            Console.WriteLine(msg);
+        }
+        static int Somar(int i, int j)
+        {
+            int soma = i + j;
+            return soma;
         }
     }
 }
