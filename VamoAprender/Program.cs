@@ -1,9 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.IO;
+using System.Text;
 
 
 namespace VamoAprender
@@ -26,9 +23,11 @@ namespace VamoAprender
             dynamic tipodinamico = 12; // dynamic é uma variavel do tipo que pode ser qualquer coisa... porem nao é muito usada.
             float divisao = 5f / 2; // Atentar-se a divisão. Se você quer o resultado correto sempre coloque uma tipagem que aceita numeros decimais.
             DateTime data = new DateTime(2010, 1, 25); // Datas em c#
+            DateTime data2 = DateTime.Now;
             data = data.AddDays(100);
+            data2 = data2.AddMonths(3);
 
-            dynamic numerocaseswitch = 3;
+            dynamic numerocaseswitch = 1;
             bool verdade = true; 
             switch (numerocaseswitch) // testando cases em c#
             {
@@ -36,25 +35,25 @@ namespace VamoAprender
                     // Operadores logicos && <- And e || <- Or
                     if (verdade == true)
                     {
-                        Console.Write("Dia depois de 100 dias: ");
-                        Console.WriteLine(data);
+                        Mensagem("Dia depois de 100 dias: " + data);
+                        Mensagem("Daqui a 3 meses será: " + data2);
                         Console.WriteLine(Class1.classe); // Aprendendo sobre objetos e classes.
                         Console.ReadLine();
                     }
                     else
                     {
-                        Console.WriteLine(tipodinamico);
-                        Console.WriteLine("Hello World " + meutexto);
-                        Console.WriteLine("Meu Nome é Leonardo");
-                        Console.WriteLine(numero + numerodecimal);
-                        Console.WriteLine(minhaletra);
+                        Mensagem(tipodinamico);
+                        Mensagem("Hello World " + meutexto);
+                        Mensagem("Meu Nome é Leonardo");
+                        Mensagem(numero + numerodecimal);
+                        Mensagem(minhaletra);
                         Console.ReadLine();
                         tipodinamico = "mudei o tipo";
-                        Console.WriteLine(tipodinamico);
+                        Mensagem(tipodinamico);
                         numerodecimal = 13.56f;
-                        Console.WriteLine("iuu");
-                        Console.WriteLine(numerodecimal);
-                        Console.WriteLine(divisao);
+                        Mensagem("iuu");
+                        Mensagem(numerodecimal);
+                        Mensagem(divisao);
                         Console.ReadLine();
                     }
                     break;
