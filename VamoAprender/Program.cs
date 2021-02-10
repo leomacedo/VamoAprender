@@ -27,7 +27,7 @@ namespace VamoAprender
             data = data.AddDays(100);
             data2 = data2.AddMonths(3);
 
-            dynamic numerocaseswitch = 1;
+            dynamic numerocaseswitch = 5;
             bool verdade = true; 
             switch (numerocaseswitch) // testando cases em c#
             {
@@ -88,6 +88,20 @@ namespace VamoAprender
                     int result = Somar(4, 5);
                     Mensagem(result);
                     Console.ReadLine();
+                    break;
+                case 5: // testando continue
+                    for (int i2 = 1; i2 <= 10; i2++)
+                    {
+                        if (i2 < 9)
+                        {
+                            continue;
+                        }
+                        Console.WriteLine(i2);
+                    }
+
+                    // Keep the console open in debug mode.
+                    Console.WriteLine("Press any key to exit.");
+                    Console.ReadKey();
                     break;
             }
             
